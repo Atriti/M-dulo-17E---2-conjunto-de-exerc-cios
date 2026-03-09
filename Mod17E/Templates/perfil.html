@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}Perfil{% endblock %}
+{% block content %}
+<h2>Perfil de {{ nome }}</h2>
+<p><strong>Idade:</strong> {{ idade }}</p>
+{% if idade >= 18 %}
+    <div class="alert alert-success">
+        Maior de idade
+    </div>
+{% else %}
+    <div class="alert alert-warning">
+        Menor de idade
+    </div>
+{% endif %}
+<h3>Hobbies:</h3>
+<ul class="list-group mb-3">
+    {% for hobby in hobbies %}
+        <li class="list-group-item">{{ hobby }}</li>
+    {% endfor %}
+</ul>
+<a href="/logout" class="btn btn-danger">Logout</a>
+{% endblock %}

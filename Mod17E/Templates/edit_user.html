@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Editar Usuário{% endblock %}
+{% block content %}
+    <h1>Editar Usuário: {{ user.username }}</h1>
+    <form method="POST">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" value="{{ user.username }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" value="{{ user.email }}" required>
+        </div>
+        <div class="mb-3">
+            <label for="perfil" class="form-label">Perfil</label>
+            <select class="form-select" id="perfil" name="perfil">
+                <option value="user" {% if user.perfil == "user" %}selected{% endif %}>User</option>
+                <option value="admin" {% if user.perfil == "admin" %}selected{% endif %}>Admin</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+    </form>
+{% endblock %}

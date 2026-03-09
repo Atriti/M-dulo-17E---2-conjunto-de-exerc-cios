@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Futebol Flexbox</title>
+    <style>
+        /* Estilos Base */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        /* 1. Cabeçalho com Flexbox (Página 10) */
+        header {
+            display: flex; /* Ativa o Flexbox (Pág. 3) */
+            justify-content: space-between; /* Distribui logo e menu (Pág. 5) */
+            align-items: center; /* Centraliza verticalmente (Pág. 6) */
+            padding: 20px 5%;
+            background-color: #004d00;
+            color: white;
+        }
+
+        /* 2. Menu Horizontal Responsivo (Página 10) */
+        nav ul {
+            display: flex;
+            gap: 30px; /* Espaço moderno entre links (Pág. 8) */
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Secção Principal */
+        .hero {
+            display: flex;
+            flex-direction: column; /* Organiza de cima para baixo (Pág. 4) */
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=1000');
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        .btn-saiba-mais {
+            padding: 10px 25px;
+            background-color: #ccff00;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+
+        /* 3. Contentor de 3 Caixas Alinhadas (Página 10) */
+        .container-jogadores {
+            display: flex;
+            flex-direction: row; /* Alinhamento horizontal padrão (Pág. 4) */
+            justify-content: space-around; /* Espaço igual ao redor (Pág. 5) */
+            flex-wrap: wrap; /* Permite quebrar linha em ecrãs pequenos (Pág. 7) */
+            gap: 20px; /* Espaçamento limpo (Pág. 8) */
+            padding: 40px 5%;
+        }
+
+        .caixa-jogador {
+            flex: 1; /* Faz as caixas crescerem igualmente */
+            min-width: 280px; /* Garante que não ficam demasiado pequenas */
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .caixa-jogador img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        /* 4. Rodapé Estruturado (Página 10) */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #222;
+            color: #ccc;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h2>MundoGolo</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Notícias</a></li>
+                <li><a href="#">Jogadores</a></li>
+                <li><a href="#">Estádios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>As Maiores Estrelas do Futebol</h1>
+        <p>Análise completa das lendas vivas do desporto rei.</p>
+        <a href="https://www.abola.pt" class="btn-saiba-mais">Saber Mais</a>
+    </section>
+
+    <main class="container-jogadores">
+        
+        <article class="caixa-jogador">
+            <img src="https://img.iol.pt/image/id/54b82e010cf2878009a199f6/" alt="CR7">
+            <h3>Cristiano Ronaldo</h3>
+            <p>O mestre do trabalho e da disciplina.</p>
+        </article>
+
+        <article class="caixa-jogador">
+            <img src="https://livesport-ott-images.ssl.cdn.cra.cz/r900xfq60/bc4beb6a-1e6a-480f-903f-80493fa72f4b.jpeg" alt="Messi">
+            <h3>Lionel Messi</h3>
+            <p>O talento puro e a magia nos pés.</p>
+        </article>
+
+        <article class="caixa-jogador">
+            <img src="https://ichef.bbci.co.uk/ace/standard/1024/cpsprodpb/16AAD/production/_129054829_kylianmbappe_getty.jpg" alt="Mbappé">
+            <h3>Kylian Mbappé</h3>
+            <p>A velocidade supersónica do futuro.</p>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Portal Futebol - Desenvolvido com Flexbox Moderno</p>
+    </footer>
+
+</body>
+</html>

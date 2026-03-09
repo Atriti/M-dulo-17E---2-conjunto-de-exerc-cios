@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Formulário Completo{% endblock %}
+
+{% block content %}
+
+<h2>Formulário Completo</h2>
+
+{% if erro %}
+<div class="alert alert-danger">
+    {{ erro }}
+</div>
+{% endif %}
+
+{% if sucesso %}
+<div class="alert alert-success">
+    {{ sucesso }}
+</div>
+{% endif %}
+
+<form method="POST">
+
+  <div class="mb-3">
+    <label class="form-label">Nome</label>
+    <input type="text" name="nome" class="form-control"
+           required minlength="3"
+           value="{{ nome if nome else '' }}">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Email</label>
+    <input type="email" name="email" class="form-control"
+           required
+           value="{{ email if email else '' }}">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Idade</label>
+    <input type="number" name="idade" class="form-control"
+           required min="18"
+           value="{{ idade if idade else '' }}">
+  </div>
+
+  <div class="mb-3">
+    <label class="form-label">Mensagem</label>
+    <textarea name="mensagem" class="form-control"
+              required>{{ mensagem if mensagem else '' }}</textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Enviar</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}Página Inicial{% endblock %}
+{% block content %}
+    <h1>Bem-vindo!</h1>
+    <p>Esta é a página inicial da aplicação.</p>
+    <section class="crud-info">
+    <div class="container">
+        <h2>Sistema de Reservas</h2>
+        <p>
+            Este CRUD de utilizadores não é apenas um exercício teórico; ele forma a espinha dorsal 
+            de muitas funcionalidades em aplicações do mundo real.
+        </p>
+
+        <div class="feature">
+            <div>
+                <h3>Criar Utilizadores</h3>
+                <p>O processo de registo permite que novos clientes entrem e comecem a utilizar o sistema.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div>
+                <h3>Validar Utilizadores</h3>
+                <p>O login autentica os utilizadores, dando-lhes acesso a funcionalidades personalizadas.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div>
+                <h3>Associar Reservas</h3>
+                <p>Cada reserva estará ligada a um utilizador, permitindo histórico e gestão pessoal.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div>
+                <h3>Editar Perfil</h3>
+                <p>Os utilizadores podem manter os seus dados atualizados, como contactos e preferências.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div>
+                <h3>Painel de Administração</h3>
+                <p>Interface para gerir todos os utilizadores do sistema.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

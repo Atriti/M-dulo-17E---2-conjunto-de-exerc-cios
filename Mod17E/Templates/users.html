@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %}Usuários{% endblock %}
+{% block content %}
+    <h1>Lista de Usuários</h1>
+    <table class="table">
+        <tr><th>ID</th><th>Username</th><th>Email</th><th>Password</th><th>Perfil</th><th>Editar</th><th>Excluir</th></tr>
+        {% for u in users %}
+        <tr>
+            <td>{{ u.id }}</td>
+            <td>{{ u.username }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.password }}</td>
+            {% if u.perfil == "user" %}
+                <td>User</td>
+            {% endif %}
+            {% if u.perfil == "admin" %}
+                <td>Admin</td>
+            {% endif %}
+            <td>
+                <form action="/users/edit/{{ u.id }}">
+                    <button class="btn btn-warning">
+                        Editar User
+                    </button>
+                </form>
+            </td>
+            <td>
+                <form action="/users/delete/{{ u.id }}" method="POST">
+                    <button class="btn btn-danger"
+                        onclick="return confirm('Tens a certeza que queres apagar este utilizador?');">
+                        Excluir User
+                    </button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/users/create">
+        <button class="btn btn-primary">
+            Criar User
+        </button>
+    </form>
+{% endblock %}
